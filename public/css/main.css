@@ -1,0 +1,81 @@
+body {
+    background: #F2F5F9;
+}
+
+#navbar {
+    background: #ff9966;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ff5e62, #ff9966);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ff5e62, #ff9966);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-top: 5px solid #ff5e62;
+    border-bottom: 3px solid #fff;
+    box-shadow: 0 0 1px 1px rgba(20, 23, 28, .1), 0 3px 1px 0 rgba(20, 23, 28, .1);
+}
+
+#welcome {
+    background: linear-gradient(20deg, rgba(20, 23, 28, 0.87), rgba(10, 9, 9, 0.692)), url('/images/bg-welcome.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.welcome-title {
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    color: #fff;
+}
+
+.post-card {
+    background: #fff;
+    box-shadow: 0 0 1px 1px rgba(20, 23, 28, .1), 0 3px 1px 0 rgba(20, 23, 28, .1);
+    border-radius: 0px !important;
+    border: none !important;
+    margin-bottom: 30px;
+}
+
+#get-solution {
+    background: #000000;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #000000);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #000000);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.solution-title {
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    color: #fff;
+}
+
+.thumbnail-list {
+    padding: 10px;
+}
+
+footer {
+    border-top: 5px solid #ff5e62;
+    background: #fff;
+    padding: 40px 40px;
+}
+
+.bottom-widget {
+    padding: 10px;
+}
+
+.bottom-widget p {
+    margin: 0px;
+}
+
+.content-post {
+    border: none !important;
+    box-shadow: 0 0 7px 1px rgba(20, 23, 28, 0.068), 0 3px 1px 0 rgba(20, 23, 28, 0.062);
+}
+
+.single-post.card-title {
+    text-transform: capitalize;
+    font-size: 26px;
+    font-weight: 700;
+    font-family: 'Lora', serif;
+}

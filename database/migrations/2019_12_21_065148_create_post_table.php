@@ -17,7 +17,7 @@ class CreatePostTable extends Migration
             $table->bigIncrements('id');
             $table->string('slug', 100);
             $table->string('title', 125);
-            $table->text('artikel');
+            $table->longText('artikel');
             $table->string('kategori', 100)->default('Tidak Berkategori');
             $table->string('status', 100)->default('Draft');
             $table->string('penulis', 100);

@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'BlogController@index')->name('blog.index');
-Route::get('/detail-post', 'BlogController@detailPost')->name('blog.detail-post');
+Route::get('/{name}', 'BlogController@detailPost')->name('blog.detail-post');
 
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/', function () {

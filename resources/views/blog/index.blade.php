@@ -26,10 +26,10 @@
           @foreach ($artikels as $artikel)
           <div class="col-md-4 pb-3" >
               <div class="card post-card" style="width:20rem;">
-                <img src="{{  asset('images/bg-welcome.jpg') }}" class="card-img-top" alt="...">
+                <img src="{{  $artikel->thumbnail }}" class="card-img-top" style="object-fit:cover;" width="300px" height="200px" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title">{{ $artikel->title }}</h5>
-                <p class="card-text">{!! $artikel->artikel !!}</p>
+                  <h5 class="card-title"><a href="{{ route('blog.detail-post', $artikel->slug) }}">{{ $artikel->title }}</a></h5>
+                <p class="card-text">{!! strip_tags(substr($artikel->artikel, 0, 150)) !!}</p>
               </div>
             </div>
           </div>
@@ -57,24 +57,22 @@
         <div class="row">
           <div class="col-md-8">
               <div class="list-post-horizontal">
-              @foreach ($artikels as $artikel)
+              @foreach ($artikelTech as $artikel)
               <div class="card mb-3" style="max-width: 100%;">
                 <div class="row no-gutters">
                   <div class="col-md-4">
-                    <img src="{{ asset('images/bg-welcome.jpg') }}" height="100%" class="card-img rounded thumbnail-list" alt="...">
+                    <img src="{{ $artikel->thumbnail }}" height="150px" style="object-fit:cover" class="card-img rounded thumbnail-list" alt="...">
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
-                      <h5 class="card-title">{{ $artikel->title }}</h5>
-                      <p class="card-text">{!! $artikel->artikel !!}</p>
+                      <h5 class="card-title"><a href="{{ route('blog.detail-post', $artikel->slug) }}">{{ $artikel->title }}</a></h5>
+                      <p class="card-text">{{ strip_tags(substr($artikel->artikel, 0, 60)) }}</p>
                       <p class="card-text"><small class="text-muted">Create: {{ substr($artikel->created_at, 0, -8) }}</small></p>
                     </div>
                   </div>
                 </div>
               </div>
               @endforeach
-              {{ $artikels->links() }}
-
             </div>
           </div>
 

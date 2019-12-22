@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="{{ url('/') }}/css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Poppins&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/0016cf1886.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+      href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/default.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+    <script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/languages/go.min.js"></script>
     <title>Tukang Ketik | Belajar Pemrograman dari Pemula</title>
   </head>
   <body>
@@ -23,10 +27,10 @@
                     <div class="main-content">
                         <div class="col mb-4">
                             <div class="card content-post h-100">
-                              <img src="{{ asset('images/bg-welcome.jpg') }}" class="card-img-top" alt="...">
+                              <img src="{{  $artikel->thumbnail }}" height="420px" style="object-fit:cover" class="card-img-top" alt="...">
                               <div class="card-body">
-                                <h5 class="single-post card-title">Cara membuat nasi goreng telur</h5>
-                                <p class="single-post card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <h5 class="single-post card-title">{{ $artikel->title }}</h5>
+                                <p class="single-post card-text">{!! $artikel->artikel !!}</p>
                               </div>
                             </div>
                           </div>

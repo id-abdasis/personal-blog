@@ -26,7 +26,7 @@
 
       <div class="row">
         <div class="col-md-12">
-            <form action="{{ route('admin.post-artikel') }}" method="post">
+            <form action="{{ route('admin.post-artikel') }}" method="post" enctype="multipart/form-data">
                 <div class="card">
                     <div class="card-header">
                       <h4>Write Your Post</h4>

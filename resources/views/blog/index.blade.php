@@ -22,21 +22,24 @@
            <h3 id="section-title"><i class="fa fa-book"></i> Tutorial Terbaru</h3>
            <h5 id="section-subtitle">Jangan sampai ketinggalan materi terbaru, materi akan update setiap hari.</h5>
         </div>
-        <div class="row">
+        <div class="row row-eq-height">
           @foreach ($artikels as $artikel)
-          <div class="col-md-4 pb-3" >
-              <div class="card post-card" style="width:20rem;">
-                <img src="{{  $artikel->thumbnail }}" class="card-img-top" style="object-fit:cover;" width="300px" height="200px" alt="...">
+          <div class="col-md-4 col-sm-12 col-lg-4 px-2 md:mb-0">
+              <div class="card post-card">
+                <img src="{{  $artikel->thumbnail }}" class="card-img-top " style="object-fit:cover;" width="300px" height="200px" alt="...">
                 <div class="card-body">
                   <h5 class="card-title" id="judul-artikel" ><a href="{{ route('blog.detail-post', $artikel->slug) }}">{{ $artikel->title }}</a></h5>
-                <p class="card-text">{!! strip_tags(substr($artikel->artikel, 0, 150)) !!}</p>
+                <p class="card-text" id="diskripsi_artikel">{!! strip_tags(substr($artikel->artikel, 0, 120)) !!}</p>
               </div>
             </div>
           </div>
           @endforeach
-          
         </div>
-        {{ $artikels->links() }}
+       <div class="row">
+          <div class="col md:mb-0">
+            {{ $artikels->links() }}
+          </div>
+       </div>
       </div>
     </div>
 
@@ -48,7 +51,7 @@
       </div>
     </div>
 
-    <div class="list-post">
+    <div class="list-post mb-5">
       <div class="container">
         <div class="title-section" style="margin-bottom: 45px;">
            <h3 id="section-title"><i class="fa fa-book"></i> Tutorial Pilihan</h3>
@@ -57,22 +60,25 @@
         <div class="row">
           <div class="col-md-8">
               <div class="list-post-horizontal" style="border: none !important">
-              @foreach ($artikelTech as $artikel)
+              @foreach ($artikelTechs as $artikelTech)
               <div class="card mb-3" id="card-post"style="max-width: 100%;">
                 <div class="row no-gutters">
                   <div class="col-md-4">
-                  <img src="{{ $artikel->thumbnail }}" height="100%"  style="object-fit:cover; max-height: 150px;" class="card-img rounded thumbnail-list" alt="{{ $artikel->slug }}">
+                  <img src="{{ $artikelTech->thumbnail }}" height="100%"  style="object-fit:cover; max-height: 150px;" class="card-img rounded thumbnail-list align-self-center mr-3" alt="{{ $artikelTech->slug }}">
                   </div>
                   <div class="col-md-8">
                     <div class="card-body" id="post-container">
-                      <h5 class="card-title" id="judul-artikel"><a href="{{ route('blog.detail-post', $artikel->slug) }}">{{ $artikel->title }}</a></h5>
-                      <p class="card-text">{{ strip_tags(substr($artikel->artikel, 0, 120)) }}</p>
-                    <p class="card-text"><small class="text-muted">Created: {{ substr($artikel->created_at, 0, -8) }} | Oleh: <a id="link-penulis" href="https://instagram.com/id.elasis">{{ $artikel->penulis }}</a></small></p>
+                      <h5 class="card-title" id="judul-artikel"><a href="{{ route('blog.detail-post', $artikelTech->slug) }}">{{ $artikelTech->title }}</a></h5>
+                      <p class="card-text" style="font-size: 14px">{{ strip_tags(substr($artikelTech->artikel, 0, 120)) }}</p>
+                    <p class="card-text"><small class="text-muted">Created: {{ substr($artikelTech->created_at, 0, -8) }} | Oleh: <a id="link-penulis" href="https://instagram.com/id.elasis">{{ $artikelTech->penulis }}</a></small></p>
                     </div>
                   </div>
                 </div>
               </div>
               @endforeach
+              <a href="#">
+                <button class="btn btn-orange"><i class="fa fa-book mr-1"></i>Lihat Selengkapnya</button>
+              </a>
             </div>
           </div>
 
@@ -82,6 +88,7 @@
                 <div class="card-title">
                   <h5><i class="fa fa-cubes"></i> TEKNOLOGI</h5>
                   <hr>
+                  @include('includes.sidebar')
                 </div>
               </div>
 

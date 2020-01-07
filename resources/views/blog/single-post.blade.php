@@ -83,6 +83,7 @@
                             <div class="card-title">
                                 <h5><i class="fa fa-cubes"></i> TEKNOLOGI</h5>
                                 <hr>
+                                @include('includes.sidebar')
                           </div>
                           
                         </div>

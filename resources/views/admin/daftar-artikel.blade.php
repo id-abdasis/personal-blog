@@ -52,6 +52,7 @@
                   <tbody>
                     @foreach ($artikels as $artikel)
                     <tr>
+                        
                         <td>
                           <div class="custom-checkbox custom-control">
                             <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input" id="checkbox-1">

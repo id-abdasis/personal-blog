@@ -26,11 +26,12 @@
 
       <div class="row">
         <div class="col-md-12">
-            <form action="{{ route('admin.post-artikel') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('admin.update-artikel') }}" method="post" enctype="multipart/form-data">
                 <div class="card">
                     <div class="card-header">
                       <h4>Write Your Post</h4>
                     </div>
+                  <input type="hidden" name="id" value="{{$artikel->id}}">
                     <div class="card-body">
                       <div class="form-group row mb-4">
                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Title</label>

@@ -2,6 +2,18 @@ body {
     background: #EDF2F7;
 }
 
+*{
+    font-family: 'Rubik';
+}
+
+a{
+    color: #FF6863;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+
 #navbar {
     background: #ff9966;
     /* fallback for old browsers */
@@ -83,20 +95,21 @@ footer {
     text-transform: capitalize;
     font-size: 26px;
     font-family: 'Roboto Condensed', sans-serif;
-    font-weight: 700;
     color: #4A5568;
     border-radius: 0px !important;
 }
+
+
 
 #isi-konten, #isi-komentar{
     padding: 40px !important;
 }
 
-p.single-post.card-text{
-    font-size: 18px;
+#isi-konten p{
+    font-size: 15px;
     font-family: 'Roboto Slab', serif;
-    font-weight: 600;
-    line-height: 20px;
+    font-weight: 500;
+    line-height: 26px;
 } 
 
 #judul-artikel a:hover{
@@ -107,11 +120,14 @@ p.single-post.card-text{
 #judul-artikel a{
     color: #FF6863;
     font-family: 'Roboto Condensed', sans-serif;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 600;
     text-transform: capitalize;
 }
 
+#diskripsi_artikel{
+    font-size: 14px;
+}
 #section-title{
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 600;
@@ -146,4 +162,29 @@ a#link-penulis{
 #title-footer{
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 600;
+}
+
+.btn-orange{
+    background: #FF6863;
+    color: #fff;
+}
+
+#title-teknologi{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+li.media {
+    padding: 5px;
+}
+
+.bg-gray{
+    background: #f5f6fa;
+}
+
+img.float-left.img-thumbnail.mr-3{
+    border-radius: 50%;
+    box-shadow: 0 2px 1px 1px rgba(124, 123, 123, 0.616);
 }

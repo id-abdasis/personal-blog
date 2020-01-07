@@ -60,7 +60,7 @@
                         
                         <div class="col-sm-12 col-md-10">
                           <div id="image-preview" class="image-preview" style="background: url('{{ url('/') . '/' }}{{ $artikel->thumbnail }}') center center / cover">
-                            <label for="image-upload" id="image
+                            <label for="image-upload" id="image-label">Pilih Foto</label>
                             <input type="file" name="thumbnail" id="image-upload" />
                           </div>
                         </div>

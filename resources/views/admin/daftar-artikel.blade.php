@@ -26,6 +26,30 @@
 
       <div class="row">
         <div class="col-12">
+          <div class="card mb-0">
+            <div class="card-body">
+              <ul class="nav nav-pills">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">All <span class="badge badge-white"> {{ $artikels->count() }} </span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Draft <span class="badge badge-primary"> {{ $countPostDraft }} </span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Pending <span class="badge badge-primary">{{ $countPostPending }}</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Publish <span class="badge badge-primary">{{ $countPostPublish }}</span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-12">
           <div class="card">
             <div class="card-header">
               <h4>Advanced Table</h4>
@@ -46,7 +70,6 @@
                       <th>Tanggal Terbit</th>
                       <th>Penulis</th>
                       <th>Status</th>
-                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -59,12 +82,27 @@
                             <label for="checkbox-1" class="custom-control-label">&nbsp;</label>
                           </div>
                         </td>
-                        <td>{{ $artikel->title }}</td>
+                        <td>
+                          {{ $artikel->title }}
+                          <div class="table-links">
+                            <a href="#">View</a>
+                            <div class="bullet"></div>
+                            <a href="{{ route('admin.edit-artikel' , $artikel->slug) }}">Edit</a>
+                            <div class="bullet"></div>
+                            <a href="#" class="text-danger">Trash</a>
+                          </div>
+                        </td>
                         <td>{{ strip_tags(substr($artikel->artikel, 0,60)) }}</td>
                         <td>{{ substr($artikel->created_at, 0, -8) }}</td>
                         <td>{{ $artikel->penulis }}</td>
-                        <td><div class="badge badge-success">{{ $artikel->status }}</div></td>
-                        <td><a href="{{ route('admin.edit-artikel' , $artikel->slug) }}" class="btn btn-outline-info btn-sm"> <i class="fa fa-pencil-alt"></i> Edit</a></td>
+                        <td>
+                            @if ($artikel->status == "Publish")
+                              <div class="badge badge-primary">{{ $artikel->status }}</div>
+                            @endif
+                            @if ($artikel->status == "Draft")
+                              <div class="badge badge-info">{{ $artikel->status }}</div>
+                            @endif
+                        </td>
                       </tr>
                     @endforeach
                   </tbody>

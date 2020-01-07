@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="{{ url('/') }}/css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Poppins|Rubik:400,500|Roboto+Condensed:400,700|Roboto+Slab&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/0016cf1886.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet"
-      href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/default.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/atom-one-dark.min.css">
     <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
-    <script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/languages/go.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
     <title>Tukang Ketik | Belajar Pemrograman dari Pemula</title>
   </head>
   <body>
@@ -31,19 +31,14 @@
                               <div class="card-body" id="isi-konten">
                                 <h5 class="single-post card-title">{{ $artikel->title }}</h5>
                                 <hr>
-                                <p class="single-post card-text">{!! $artikel->artikel !!}</p>
+                                <p class="single-post card-text">{!!  $artikel->artikel  !!}</p>
                               </div>
                             </div>
                           </div>
                     </div>
                     <div class="main-about-writer">
                       <div class="col-md-12">
-                        <div class="card about-writer h-100">
-                          <img src="" alt="">
-                          <div class="card-body">
-                            <h5>Abd. Asis</h5>
-                          </div>
-                        </div>
+                       @include('includes.about-write')
                       </div>
                     </div>
 

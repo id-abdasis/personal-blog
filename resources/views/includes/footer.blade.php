@@ -1,21 +1,23 @@
 <footer>
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
-          <h5 id="title-footer">Tukang Ketik</h5>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor mollitia dolores magnam? Unde debitis illum quia neque laudantium iure dolore ipsa cupiditate quidem expedita, veniam error inventore, dolores, distinctio nulla?</p>
+        <div class="col-md-6 p-3">
+          <u><h5 id="title-footer">Tukang Ketik</h5></u>
+          <p style="font-size: 15px">Blog ini dibuat hanya dengan rasa iseng, mohon maaf apabila materi yang ada tidak terlalu update, pembuat sendiri juga lagi belajar, jadi apa yang sudah saya pelajari insyaallah saya tulis di blog ini, untuk para pembaca jika ada kekurangan mohon di koreksi ya :)</p>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 p-3">
+          <u><h5 id="title-footer">Tautan</h5></u>
         </div>
-        <div class="col-md-3"></div>
-        <div class="col-md-3"></div>
+        <div class="col-md-3 p-3">
+          <u><h5 id="title-footer">Lainnya</h5></u>
+        </div>
       </div>
     </div>
   </footer>
   <div class="bottom-widget">
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 ">
           <div class="copyright">
             <p>© Tukang Ketik 2017. Hak Cipta Dilindungi</p>
           </div>

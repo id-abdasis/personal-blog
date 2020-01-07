@@ -19,7 +19,7 @@
         <a href="#" class="nav-link has-dropdown"><i class="fas fa-book"></i><span>Artikel</span></a>
         <ul class="dropdown-menu">
           <li class="{{ Request::route()->getName() == 'admin.tambah-artikel' ? ' active' : '' }}"><a class="nav-link" href="{{ route('admin.tambah-artikel') }}">Tambah Artikel</a></li>
-          <li><a class="nav-link" href="index.html">Daftar Artikel</a></li>
+          <li class="{{ Request::route()->getName() == 'admin.daftar-artikel' ? ' active' : '' }}"><a class="nav-link " href="{{ route('admin.daftar-artikel') }}">Daftar Artikel</a></li>
         </ul>
       </li>
 

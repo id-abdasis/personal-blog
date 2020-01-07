@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \App\Models\Post;
 use Str;
+use App\User;
 use Alert;
 class BlogController extends Controller
 {
@@ -12,7 +13,12 @@ class BlogController extends Controller
     {
         $artikels = Post::where('status', 'Publish')->latest()->paginate(6);
         $artikelTechs = Post::latest()->where('kategori' , '=', 'Tech')->limit(6)->get();
-        return view('blog.index')->with(['artikels' => $artikels, 'artikelTechs' => $artikelTechs]);
+        
+        return view('blog.index')->with([
+            'artikels' => $artikels,
+            'artikelTechs' => $artikelTechs,
+
+        ]);
     }
 
     public function detailPost($name)
@@ -51,8 +57,16 @@ class BlogController extends Controller
 
     public function daftarArtikel()
     {
+        $countPostPublish   = Post::where('status', 'Publish')->count();
+        $countPostDraft   = Post::where('status', 'Draft')->count();
+        $countPostPending   = Post::where('status', 'Pending')->count();
         $artikels = Post::all();
-        return view('admin.daftar-artikel')->with(['artikels' => $artikels]);
+        return view('admin.daftar-artikel')->with([
+            'artikels' => $artikels,
+            'countPostPublish'  =>  $countPostPublish,
+            'countPostDraft'    =>  $countPostDraft,
+            'countPostPending'  =>  $countPostPending,
+        ]);
     }
 
     public function editArtikel($slug)
@@ -70,5 +84,24 @@ class BlogController extends Controller
             return redirect()->route('admin.daftar-artikel');
         }
         
+    }
+
+    public function installation()
+    {
+        if (User::all()->count() == 0) {
+            $user = User::create([
+                'name' => 'Abd. Asis',
+                'email' =>  'id.abdasis@gmail.com',
+                'password'  => \bcrypt('rahasia'),
+            ]);
+
+            if ($user) {
+                Alert::success('Berhasil', 'Setup blog berhasil dilakukan silahkan login');
+                return redirect('/login');
+            }
+        }else{
+            Alert::error('Gagal', 'Maaf anda sudah melakukan setup sebelumnya');
+            return redirect('/login');
+        }
     }
 }

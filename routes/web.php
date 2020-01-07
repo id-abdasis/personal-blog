@@ -11,8 +11,11 @@
 |
 */
 
-Route::get('/', 'BlogController@index')->name('blog.index');
-Route::get('/{name}', 'BlogController@detailPost')->name('blog.detail-post');
+
+
+Auth::routes([
+    'register' => false
+]);
 
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/', function () {
@@ -28,6 +31,8 @@ Route::group(['prefix' => 'admin'], function () {
     });
 });
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/installation', 'BlogController@installation')->name('installation');
+Route::get('/', 'BlogController@index')->name('blog.index');
+Route::get('/{name}', 'BlogController@detailPost')->name('blog.detail-post');
+

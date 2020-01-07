@@ -56,4 +56,8 @@
       'Alert' => 'RealRashid\\SweetAlert\\Facades\\Alert',
     ),
   ),
+  'van-ons/laraberg' => 
+  array (
+    'providers' => 'VanOns\\Laraberg\\LarabergServiceProvider',
+  ),
 );

@@ -34,14 +34,14 @@
                   <input type="hidden" name="id" value="{{$artikel->id}}">
                     <div class="card-body">
                       <div class="form-group row mb-4">
-                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Title</label>
-                        <div class="col-sm-12 col-md-7">
+                        
+                        <div class="col-sm-12 col-md-10">
                           <input type="text" class="form-control" name="title" value="{{ $artikel->title }}">
                         </div>
                       </div>
                       <div class="form-group row mb-4">
-                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Category</label>
-                        <div class="col-sm-12 col-md-7">
+                        
+                        <div class="col-sm-12 col-md-10">
                           <select class="form-control selectric" name="kategori">
                             <option value="Tech" {{ $artikel->kategori == "Tech" ? 'selected' : '' }}>Tech</option>
                             <option value="News" {{ $artikel->kategori == "News" ? 'selected' : '' }}>News</option>
@@ -50,29 +50,26 @@
                         </div>
                       </div>
                       <div class="form-group row mb-4">
-                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Content</label>
-                        <div class="col-sm-12 col-md-7">
-                          <textarea rows="12" class="summernote" name="artikel">{{ $artikel->artikel }} </textarea>
+                        
+                        <div class="col-sm-12 col-md-10">
+                          <textarea id="mytextarea" name="artikel" rows="20" cols="10">{{ $artikel->artikel }}</textarea>
+
                         </div>
                       </div>
                       <div class="form-group row mb-4">
-                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Thumbnail</label>
-                        <div class="col-sm-12 col-md-7">
+                        
+                        <div class="col-sm-12 col-md-10">
                           <div id="image-preview" class="image-preview" style="background: url('{{ url('/') . '/' }}{{ $artikel->thumbnail }}') center center / cover">
-                            <label for="image-upload" id="image-label">Choose File</label>
+                            <label for="image-upload" id="image
                             <input type="file" name="thumbnail" id="image-upload" />
                           </div>
                         </div>
                       </div>
-                      <div class="form-group row mb-4">
-                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tags</label>
-                        <div class="col-sm-12 col-md-7">
-                          <input name="tag" type="text" class="form-control inputtags">
+                      <div class="form-row mb-4">
+                        <div class="col-sm-12 col-md-6">
+                          <input name="tag" type="text" placeholder="Masukan Tag" class="form-control inputtags">
                         </div>
-                      </div>
-                      <div class="form-group row mb-4">
-                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Status</label>
-                        <div class="col-sm-12 col-md-7">
+                        <div class="col-sm-12 col-md-6">
                           <select class="form-control selectric" name="status">
                             <option value="Publish">Publish</option>
                             <option value="Draft">Draft</option>
@@ -81,8 +78,7 @@
                         </div>
                       </div>
                       <div class="form-group row mb-4">
-                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
-                        <div class="col-sm-12 col-md-7">
+                        <div class="col-sm-12 col-md-10">
                           <button class="btn btn-primary">Create Post</button>
                         </div>
                       </div>
@@ -106,6 +102,20 @@
 
 @section('page-js')
 <script src="{{ asset('assets/js/page/features-post-create.js') }}"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script>
+  tinymce.init({
+   selector: 'textarea',
+   skin: "bootstrap",
+    content_css: "bootstrap"
+  });
+  $('form').keydown(function (e) {
+    if (e.keyCode == 13) {
+        e.preventDefault();
+        return false;
+    }
+});
+</script>
 @endsection
 
 @section('css-libraries')

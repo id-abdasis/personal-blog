@@ -32,15 +32,13 @@
                       <h4>Write Your Post</h4>
                     </div>
                     <div class="card-body">
-                      <div class="form-group row mb-4">
-                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Title</label>
-                        <div class="col-sm-12 col-md-7">
+                      <div class="form-group mb-4">
+                        <div class="col-sm-12 col-md-10">
                           <input type="text" class="form-control" name="title">
                         </div>
                       </div>
-                      <div class="form-group row mb-4">
-                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Category</label>
-                        <div class="col-sm-12 col-md-7">
+                      <div class="form-group mb-4">
+                        <div class="col-sm-12 col-md-10">
                           <select class="form-control selectric" name="kategori">
                             <option value="Tech">Tech</option>
                             <option value="News">News</option>
@@ -48,30 +46,24 @@
                           </select>
                         </div>
                       </div>
-                      <div class="form-group row mb-4">
-                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Content</label>
-                        <div class="col-sm-12 col-md-7">
-                          <textarea rows="12" class="summernote" name="artikel"></textarea>
+                      <div class="form-group mb-4">
+                        <div class="col-sm-12 col-md-10">
+                          <textarea id="mytextarea" name="artikel" rows="20" cols="10">Tulis artikel disini</textarea>
                         </div>
                       </div>
-                      <div class="form-group row mb-4">
-                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Thumbnail</label>
-                        <div class="col-sm-12 col-md-7">
+                      <div class="form-group mb-4">
+                        <div class="col-sm-12 col-md-10">
                           <div id="image-preview" class="image-preview">
                             <label for="image-upload" id="image-label">Choose File</label>
                             <input type="file" name="thumbnail" id="image-upload" />
                           </div>
                         </div>
                       </div>
-                      <div class="form-group row mb-4">
-                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tags</label>
-                        <div class="col-sm-12 col-md-7">
-                          <input name="tag" type="text" class="form-control inputtags">
+                      <div class="form-row mb-4">
+                        <div class="col-sm-12 col-md-6">
+                          <input name="tag" type="text" placeholder="Masukan Tag" class="form-control inputtags">
                         </div>
-                      </div>
-                      <div class="form-group row mb-4">
-                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Status</label>
-                        <div class="col-sm-12 col-md-7">
+                        <div class="col-sm-12 col-md-6">
                           <select class="form-control selectric" name="status">
                             <option value="Publish">Publish</option>
                             <option value="Draft">Draft</option>
@@ -80,9 +72,9 @@
                         </div>
                       </div>
                       <div class="form-group row mb-4">
-                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
+                        <label></label>
                         <div class="col-sm-12 col-md-7">
-                          <button class="btn btn-primary">Create Post</button>
+                          <button class="btn btn-primary" id="btn-create">Create Post</button>
                         </div>
                       </div>
                     </div>
@@ -97,6 +89,8 @@
 @endsection
 
 @section('js-libraries')
+<script src="https://cdn.tiny.cloud/1/3kubek8r1p1mz4kvit7hc1z2mxd8wgg551cbeu82qkmenprf/tinymce/5/tinymce.min.js"></script>
+
 <script src="{{ asset('assets/modules/summernote/summernote-bs4.js') }}"></script>
 <script src="{{ asset('assets/modules/jquery-selectric/jquery.selectric.min.js') }}"></script>
 <script src="{{ asset('assets/modules/upload-preview/assets/js/jquery.uploadPreview.min.js') }}"></script>
@@ -105,10 +99,25 @@
 
 @section('page-js')
 <script src="{{ asset('assets/js/page/features-post-create.js') }}"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script>
+  tinymce.init({
+   selector: 'textarea',
+   skin: "bootstrap",
+    content_css: "bootstrap"
+  });
+  $('form').keydown(function (e) {
+    if (e.keyCode == 13) {
+        e.preventDefault();
+        return false;
+    }
+});
+</script>
 @endsection
 
 @section('css-libraries')
 <link rel="stylesheet" href="{{ asset('assets/modules/summernote/summernote-bs4.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/modules/jquery-selectric/selectric.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css') }}">
+
 @endsection

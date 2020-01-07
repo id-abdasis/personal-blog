@@ -14,6 +14,10 @@
   <!-- Template CSS -->
   <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/components.css') }}">
+  <link rel="stylesheet" href="{{asset('vendor/laraberg/css/laraberg.css')}}">
+  <script src="{{ asset('vendor/laraberg/js/laraberg.js') }}"></script>
+  <script src="https://unpkg.com/react@16.8.6/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16.8.6/umd/react-dom.production.min.js"></script>
 <!-- Start GA -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
 <script>

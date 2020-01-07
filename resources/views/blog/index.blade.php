@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url('/') }}/css/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Poppins|Rubik:400,500|Roboto+Condensed|Roboto+Slab&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/0016cf1886.js" crossorigin="anonymous"></script>
     <title>Tukang Ketik | Belajar Pemrograman dari Pemula</title>
   </head>
@@ -19,8 +19,8 @@
     <div class="list-post">
       <div class="container">
         <div class="title-section" style="margin-bottom: 45px;">
-           <h3><i class="fa fa-book"></i> Tutorial Terbaru</h3>
-           <h5>Jangan sampai ketinggalan materi terbaru, materi akan update setiap hari.</h5>
+           <h3 id="section-title"><i class="fa fa-book"></i> Tutorial Terbaru</h3>
+           <h5 id="section-subtitle">Jangan sampai ketinggalan materi terbaru, materi akan update setiap hari.</h5>
         </div>
         <div class="row">
           @foreach ($artikels as $artikel)
@@ -28,7 +28,7 @@
               <div class="card post-card" style="width:20rem;">
                 <img src="{{  $artikel->thumbnail }}" class="card-img-top" style="object-fit:cover;" width="300px" height="200px" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title"><a href="{{ route('blog.detail-post', $artikel->slug) }}">{{ $artikel->title }}</a></h5>
+                  <h5 class="card-title" id="judul-artikel" ><a href="{{ route('blog.detail-post', $artikel->slug) }}">{{ $artikel->title }}</a></h5>
                 <p class="card-text">{!! strip_tags(substr($artikel->artikel, 0, 150)) !!}</p>
               </div>
             </div>
@@ -51,23 +51,23 @@
     <div class="list-post">
       <div class="container">
         <div class="title-section" style="margin-bottom: 45px;">
-           <h3><i class="fa fa-book"></i> Tutorial Terbaru</h3>
-           <h5>Jangan sampai ketinggalan materi terbaru, materi akan update setiap hari.</h5>
+           <h3 id="section-title"><i class="fa fa-book"></i> Tutorial Pilihan</h3>
+           <h5 id="section-subtitle">Jangan sampai ketinggalan materi terbaru, materi akan update setiap hari.</h5>
         </div>
         <div class="row">
           <div class="col-md-8">
-              <div class="list-post-horizontal">
+              <div class="list-post-horizontal" style="border: none !important">
               @foreach ($artikelTech as $artikel)
-              <div class="card mb-3" style="max-width: 100%;">
+              <div class="card mb-3" id="card-post"style="max-width: 100%;">
                 <div class="row no-gutters">
                   <div class="col-md-4">
-                    <img src="{{ $artikel->thumbnail }}" height="150px" style="object-fit:cover" class="card-img rounded thumbnail-list" alt="...">
+                  <img src="{{ $artikel->thumbnail }}" height="100%"  style="object-fit:cover; max-height: 150px;" class="card-img rounded thumbnail-list" alt="{{ $artikel->slug }}">
                   </div>
                   <div class="col-md-8">
-                    <div class="card-body">
-                      <h5 class="card-title"><a href="{{ route('blog.detail-post', $artikel->slug) }}">{{ $artikel->title }}</a></h5>
-                      <p class="card-text">{{ strip_tags(substr($artikel->artikel, 0, 60)) }}</p>
-                      <p class="card-text"><small class="text-muted">Create: {{ substr($artikel->created_at, 0, -8) }}</small></p>
+                    <div class="card-body" id="post-container">
+                      <h5 class="card-title" id="judul-artikel"><a href="{{ route('blog.detail-post', $artikel->slug) }}">{{ $artikel->title }}</a></h5>
+                      <p class="card-text">{{ strip_tags(substr($artikel->artikel, 0, 120)) }}</p>
+                    <p class="card-text"><small class="text-muted">Created: {{ substr($artikel->created_at, 0, -8) }} | Oleh: <a id="link-penulis" href="https://instagram.com/id.elasis">{{ $artikel->penulis }}</a></small></p>
                     </div>
                   </div>
                 </div>

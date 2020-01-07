@@ -2,7 +2,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h5>Tukang Ketik</h5>
+          <h5 id="title-footer">Tukang Ketik</h5>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor mollitia dolores magnam? Unde debitis illum quia neque laudantium iure dolore ipsa cupiditate quidem expedita, veniam error inventore, dolores, distinctio nulla?</p>
         </div>
         <div class="col-md-3">

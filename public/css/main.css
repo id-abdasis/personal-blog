@@ -1,5 +1,5 @@
 body {
-    background: #F2F5F9;
+    background: #EDF2F7;
 }
 
 #navbar {
@@ -29,19 +29,22 @@ body {
 
 .post-card {
     background: #fff;
-    box-shadow: 0 0 1px 1px rgba(20, 23, 28, .1), 0 3px 1px 0 rgba(20, 23, 28, .1);
-    border-radius: 0px !important;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+    border-radius: 3px !important;
+    border: none !important;
+    margin-bottom: 30px;
+}
+
+#card-post{
+    background: #fff;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+    border-radius: 3px !important;
     border: none !important;
     margin-bottom: 30px;
 }
 
 #get-solution {
-    background: #000000;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #434343, #000000);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #434343, #000000);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #434343, #000000), url('/images/coding.jpg');
 }
 
 .solution-title {
@@ -68,14 +71,79 @@ footer {
     margin: 0px;
 }
 
-.content-post {
+.content-post, .about-writer, .about-comments, .card.sidebar {
     border: none !important;
     box-shadow: 0 0 7px 1px rgba(20, 23, 28, 0.068), 0 3px 1px 0 rgba(20, 23, 28, 0.062);
+    border-radius: 0px !important;
 }
+
+
 
 .single-post.card-title {
     text-transform: capitalize;
     font-size: 26px;
+    font-family: 'Roboto Condensed', sans-serif;
     font-weight: 700;
-    font-family: 'Lora', serif;
+    color: #4A5568;
+    border-radius: 0px !important;
+}
+
+#isi-konten, #isi-komentar{
+    padding: 40px !important;
+}
+
+p.single-post.card-text{
+    font-size: 18px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 600;
+    line-height: 20px;
+} 
+
+#judul-artikel a:hover{
+    font-style: normal;
+    text-decoration: none;
+}
+
+#judul-artikel a{
+    color: #FF6863;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+#section-title{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    color: rgb(80, 79, 79);
+    line-height: 28px;
+}
+
+#section-subtitle{
+    font-family: 'Rubik';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+#welcome-subtitle{
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #fff;
+    font-size: 16px;
+}
+
+#post-container{
+    padding: 5px;
+    
+}
+
+a#link-penulis{
+    color: #FF6863;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+#title-footer{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 600;
 }

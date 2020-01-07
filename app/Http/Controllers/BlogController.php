@@ -53,7 +53,7 @@ class BlogController extends Controller
 
     public function editArtikel($slug)
     {
-        $artikel = Post::where('slug', '=', $slug)->first();
+        $artikel = Post::where('slug', $slug)->first();
         return view('admin.edit-artikel')->with(['artikel' => $artikel]);
     }
 }

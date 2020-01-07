@@ -54,7 +54,7 @@
     <div class="list-post mb-5">
       <div class="container">
         <div class="title-section" style="margin-bottom: 45px;">
-           <h3 id="section-title"><i class="fa fa-book"></i> Tutorial Pilihan</h3>
+           <h3 id="section-title"><i class="fa fa-bookmark"></i> Tutorial Pilihan</h3>
            <h5 id="section-subtitle">Jangan sampai ketinggalan materi terbaru, materi akan update setiap hari.</h5>
         </div>
         <div class="row">

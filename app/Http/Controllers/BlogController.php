@@ -60,7 +60,7 @@ class BlogController extends Controller
         $countPostPublish   = Post::where('status', 'Publish')->count();
         $countPostDraft   = Post::where('status', 'Draft')->count();
         $countPostPending   = Post::where('status', 'Pending')->count();
-        $artikels = Post::all();
+        $artikels = Post::latest()->get();
         return view('admin.daftar-artikel')->with([
             'artikels' => $artikels,
             'countPostPublish'  =>  $countPostPublish,

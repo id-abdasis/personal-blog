@@ -37,10 +37,12 @@ class BlogController extends Controller
         if ($request->hasFile('thumbnail')) {
             $tujuanFolder = 'gambar/' . date('d-m-Y') . '/';
             $moveUpload = $request->file('thumbnail')->move($tujuanFolder, date('hsm') . '_' . $request->file('thumbnail')->getClientOriginalName());
-            $uploadFoto = 'gambar/' . date('d-m-Y') . '/' . date('hsm') . '_' . $request->file('thumbnail');
+            $uploadFoto = 'gambar/' . date('d-m-Y') . '/' . date('hsm') . '_' . $request->file('thumbnail')->getClientOriginalName();
         }else{
             $uploadFoto = 'images/default-images.png';
         }
+
+        dd($uploadFoto);
         $post = Post::create([
             'title' => $request->title,
             'slug'  =>  Str::slug($request->title, '-'),

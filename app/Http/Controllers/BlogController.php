@@ -42,7 +42,6 @@ class BlogController extends Controller
             $uploadFoto = 'images/default-images.png';
         }
 
-        dd($uploadFoto);
         $post = Post::create([
             'title' => $request->title,
             'slug'  =>  Str::slug($request->title, '-'),

@@ -27,6 +27,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('update-artikel', 'BlogController@updateArtikel')->name('admin.update-artikel');
         Route::get('edit-artikel/{slug}', 'BlogController@editArtikel')->name('admin.edit-artikel');
         Route::get('daftar-artikel', 'BlogController@daftarArtikel')->name('admin.daftar-artikel');
+        Route::get('delete-artikel/{id}', 'BlogController@deleteArtikel')->name('admin.delete-artikel');
 
     });
 });

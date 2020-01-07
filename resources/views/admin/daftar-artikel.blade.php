@@ -89,7 +89,7 @@
                             <div class="bullet"></div>
                             <a href="{{ route('admin.edit-artikel' , $artikel->slug) }}">Edit</a>
                             <div class="bullet"></div>
-                            <a href="#" class="text-danger">Trash</a>
+                          <a href="{{ route('admin.delete-artikel', $artikel->id) }}" class="text-danger">Trash</a>
                           </div>
                         </td>
                         <td>{{ strip_tags(substr($artikel->artikel, 0,60)) }}</td>

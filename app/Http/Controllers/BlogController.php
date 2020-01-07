@@ -106,4 +106,12 @@ class BlogController extends Controller
             return redirect('/login');
         }
     }
+
+    public function deleteArtikel($id)
+    {
+        # code...
+        $artikel = Post::findOrFail($id)->delete();
+        Alert::success('Berhasil', 'Artikel Berhasil Dihapus');
+        return redirect()->route('admin.daftar-artikel');
+    }
 }
